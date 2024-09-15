@@ -2,9 +2,9 @@
 <addon id="repository.vigilante-pancake"  name="vigilante-pancake" version="1.0.0" provider-name="Natsumi-x">
     <extension point="xbmc.addon.repository" name="vigilante-pancake Repository">
         <dir>
-            <info compressed="false">https://raw.githubusercontent.com/Natsumi-x/vigilante-pancake/main/repo/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/Natsumi-x/vigilante-pancake/main/repo/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/Natsumi-x/vigilante-pancake/main/repo/zips/</datadir>
+            <info compressed="false">https://raw.githubusercontent.com/Natsumi-x/natsumi-x.github.io/main/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/Natsumi-x/natsumi-x.github.io/main/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/Natsumi-x/natsumi-x.github.io/main/repo/zips/</datadir>
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
