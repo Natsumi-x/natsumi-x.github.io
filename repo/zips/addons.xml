@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addons><addon id="plugin.video.EpicKodiWizard" name="Epic Kodi Wizard" version="1.0.0" provider-name="EpicKodi">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Epic Kodi Wizard</summary>
+    <description lang="en">Simple Kodi build</description>
+	<website>http://EpicKodi.com</website>
+    <platform>all</platform>
+  </extension>
+</addon><addon id="repository.vigilante-pancake" name="vigilante-pancake" version="1.0.0" provider-name="Natsumi-x">
+    <extension point="xbmc.addon.repository" name="vigilante-pancake Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/Natsumi-x/natsumi-x.github.io/main/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/Natsumi-x/natsumi-x.github.io/main/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/Natsumi-x/natsumi-x.github.io/main/repo/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>vigilante-pancake repo</summary>
+        <description>Wizard for Epic's Kodi Build</description>
+        <disclaimer />
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon></addons>
