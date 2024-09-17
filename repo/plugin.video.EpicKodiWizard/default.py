@@ -37,7 +37,7 @@ def OPEN_URL(url):
     req = urllib.request.Request(url)
     req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
     response = urllib.request.urlopen(req)
-    link=response.read()
+    link = response.read().decode('utf-8')
     response.close()
     return link
 
