@@ -10,10 +10,10 @@ import zipfile
 import ntpath
 
 # Consider updating this to a more recent User-Agent
-USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'  
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3' 
 
 
-base = 'http://EpicKodi.com'  # You might not need this anymore
+BASE_URL = 'https://natsumi-x.github.io/'
 ADDON = xbmcaddon.Addon(id='plugin.video.EpicKodiWizard')
 dialog = xbmcgui.Dialog()
 VERSION = "1.0.0"
@@ -21,15 +21,17 @@ PATH = "EpicKodiWizard"
 
 
 def CATEGORIES():
-    link = OPEN_URL('https://natsumi-x.github.io/wizard.html').replace('\n', '').replace('\r', '')
-    match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?escription="(.+?)"').findall(link)
-    for name, url, iconimage, fanart, description in match:  
+    link = OPEN_URL(BASE_URL + 'wizard.html') 
+    
+    # More flexible regex pattern to handle variations in wizard.html
+    match = re.compile(r'<p>name="([^"]+)"[\s\S]*?<p>url="([^"]+)"[\s\S]*?<p>img="([^"]+)"[\s\S]*?<p>fanart="([^"]+)"[\s\S]*?<p>description="([^"]+)"').findall(link)
 
-        # Prepend your GitHub Pages URL to the relative paths in wizard.html
-        url = 'https://natsumi-x.github.io/' + url
-        iconimage = 'https://natsumi-x.github.io/' + iconimage
-        fanart = 'https://natsumi-x.github.io/' + fanart
+    for name, url, iconimage, fanart, description in match:
+        url = BASE_URL + url         # Construct full URL for the addon zip
+        iconimage = BASE_URL + iconimage
+        fanart = BASE_URL + fanart
         addDir(name, url, 1, iconimage, fanart, description)
+
     setView('movies', 'MAIN')
 
 
